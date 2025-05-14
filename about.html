@@ -15,6 +15,31 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      .hero-bg {
+        background-image: url("images/hero-img-bg.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0.75rem;
+      }
+
+      .card-glass {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
     </style>
   </head>
@@ -72,26 +97,43 @@
     </header>
     <!-- Hero Section -->
     <section
-      class="bg-[#2ca6b1] max-w-5xl mx-auto rounded-xl px-6 py-12 mt-8 md:mt-12 md:flex md:items-center md:justify-center md:text-center"
+      class="relative max-w-5xl mx-auto rounded-xl px-6 py-12 mt-8 md:mt-12 text-white overflow-hidden hero-bg"
     >
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-white font-semibold text-lg md:text-xl mb-3">
-          PT. Tri Jaya Tissue
-        </h1>
-        <p class="text-white text-xs md:text-sm mb-6 leading-relaxed">
-          A company that is engaged in the paper industry, especially tissue
-          paper, which is widely used in daily life.
+      <!-- Overlay with correct opacity -->
+      <div class="hero-overlay"></div>
+
+      <!-- Content Card -->
+      <div
+        class="relative z-10 max-w-3xl mx-auto text-center card-glass p-8 rounded-xl shadow-lg"
+      >
+        <h1 class="font-bold text-2xl md:text-3xl mb-4">PT. Tri Jaya Tissue</h1>
+        <p class="mb-6 text-white/90">
+          Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit
+          phasellus mollis sit aliquam sit nullam neque ultrices.
         </p>
-        <div class="flex justify-center gap-4">
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
           <button
-            class="bg-white text-[#2ca6b1] text-xs md:text-sm font-semibold rounded-full px-6 py-2 hover:bg-slate-100 transition"
-            type="button"
+            class="bg-white text-[#2ca6b1] font-semibold rounded-full px-6 py-3 flex items-center justify-center hover:bg-slate-100 transition"
           >
             Get started
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 ml-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
           </button>
           <button
-            class="border border-white text-white text-xs md:text-sm font-semibold rounded-full px-6 py-2 hover:bg-white hover:text-[#2ca6b1] transition"
-            type="button"
+            class="border border-white text-white font-semibold rounded-full px-6 py-3 hover:bg-white hover:text-[#2ca6b1] transition duration-300"
           >
             View video
           </button>
@@ -99,40 +141,137 @@
       </div>
     </section>
     <!-- Video and Info Section -->
-    <section
-      class="bg-[#2ca6b1] max-w-5xl mx-auto rounded-xl mt-10 px-6 py-10 md:flex md:items-center md:gap-10"
-    >
-      <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+    <section class="bg-[#2ca6b1] text-white mt-16 py-12 px-6">
+      <section
+        class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-20"
+      >
         <div
-          aria-label="Play video button on white square"
-          class="w-64 h-40 bg-white rounded-lg flex items-center justify-center cursor-pointer"
+          class="w-full md:w-[480px] aspect-[4/3] bg-[#f7f8fc] rounded-bl-3xl relative flex items-center justify-center"
         >
-          <i class="fas fa-play text-[#2ca6b1] text-3xl"> </i>
+          <iframe
+            src="https://www.youtube.com/embed/CChMM7ftn_Q"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="relative top-0 left-0 w-full h-full"
+            style="width: 420px; height: 350px"
+          >
+          </iframe>
         </div>
-      </div>
-      <div class="w-full md:w-1/2 text-white text-xs md:text-sm space-y-4">
-        <p>
-          PT. Tri Jaya Tissue is a company that is engaged in the paper
-          industry, especially tissue paper, which is widely used in daily life.
+        <div class="max-w-xl">
+          <p class="mb-6 text-base leading-relaxed">
+            <strong>PT Tri Jaya Tissue</strong> Lorem ipsum dolor sit amet
+            consectetur adipiscing eli mattis sit phasellus mollis sit aliquam
+            sit nullam neque ultrices.
+          </p>
+          <h2 class="text-2xl font-bold mb-2">Visi</h2>
+          <p class="mb-6 text-sm leading-relaxed">
+            Untuk menjadi salah satu leading company di industri tissue yang
+            ramah lingkungan.
+          </p>
+          <h2 class="text-2xl font-bold mb-2">Misi</h2>
+          <p class="text-sm leading-relaxed">
+            Menyediakan tissue yang higienis serta berkualitas dengan harga yang
+            ekonomis Bekerja sama dengan supplier dan distributor kita
+            diberbagai wilayah untuk memenuhi kebutuhan konsumen akan tissue
+            Mempromosikan penggunaan tissue di masyarakat serta membangun image
+            akan pentingnya penggunaan tissue untuk kesehatan Mengambil bagian
+            untuk ikut serta dalam melestarikan lingkungan hidup di kehidupan
+            sehari hari
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto px-6 mt-20">
+      <div class="text-center max-w-[600px] mx-auto">
+        <h3 class="text-gray-900 font-semibold text-lg mb-2">
+          Produk Unggulan Kami
+        </h3>
+        <p class="text-gray-500 text-xs leading-relaxed mb-8">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut elit at
+          gravida rutrum, et rhoncus tellus.
         </p>
-        <div>
-          <h3 class="font-semibold mb-1">Visi</h3>
-          <p>
-            To become a leading tissue paper company in Indonesia with quality
-            and environmentally friendly products.
-          </p>
+      </div>
+      <div
+        class="flex items-center justify-center space-x-4 overflow-x-auto no-scrollbar px-2"
+      >
+        <button
+          aria-label="Previous"
+          class="text-gray-400 hover:text-gray-700 disabled:text-gray-300"
+        >
+          <i class="fas fa-chevron-left fa-lg"> </i>
+        </button>
+        <div class="flex space-x-6">
+          <div class="flex flex-col items-center space-y-2 min-w-[120px]">
+            <img
+              alt="Product image placeholder for Hello Tissue, white background with blue text"
+              class="rounded-lg"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/4d2dd26b-66b0-4587-d13e-9e32ee6e0ca4.jpg"
+              width="120"
+            />
+            <span class="text-xs text-gray-700 font-semibold">
+              Hello Tissue
+            </span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 min-w-[120px]">
+            <img
+              alt="Product image placeholder for T-Shirt Tissue, white background with blue text"
+              class="rounded-lg"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/6c3d93b4-6cab-42e8-6e65-b39b494632a7.jpg"
+              width="120"
+            />
+            <span class="text-xs text-gray-700 font-semibold">
+              T-Shirt Tissue
+            </span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 min-w-[120px]">
+            <img
+              alt="Product image placeholder for Green Soft Tissue, white background with blue text"
+              class="rounded-lg"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/19546693-7071-4157-69d8-3b3b3aa2f011.jpg"
+              width="120"
+            />
+            <span class="text-xs text-gray-700 font-semibold">
+              Green Soft Tissue
+            </span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 min-w-[120px]">
+            <img
+              alt="Product image placeholder for Legacy Tissue, white background with blue text"
+              class="rounded-lg"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/cc8f1ffe-8479-45fa-68c8-c1ce755d451a.jpg"
+              width="120"
+            />
+            <span class="text-xs text-gray-700 font-semibold">
+              Legacy Tissue
+            </span>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold mb-1">Misi</h3>
-          <p>
-            To produce high-quality tissue paper products that meet customer
-            needs and maintain sustainability.
-          </p>
-        </div>
+        <button
+          aria-label="Next"
+          class="text-gray-400 hover:text-gray-700 disabled:text-gray-300"
+        >
+          <i class="fas fa-chevron-right fa-lg"> </i>
+        </button>
+      </div>
+      <div class="flex justify-center mt-8">
+        <a href="/index5.html">
+          <button
+            class="bg-[#5B5F87] text-white text-sm font-semibold rounded-full px-6 py-2 hover:bg-indigo-800 transition"
+          >
+            See more
+          </button>
+        </a>
       </div>
     </section>
+
     <!-- Produk Unggulan Kami Section -->
-    <section class="max-w-5xl mx-auto mt-16 px-6 text-center">
+    <!-- <section class="max-w-5xl mx-auto mt-16 px-6 text-center">
       <h2 class="text-slate-900 font-semibold text-base md:text-lg mb-3">
         Produk Unggulan Kami
       </h2>
@@ -191,7 +330,7 @@
       >
         Lihat selengkapnya
       </button>
-    </section>
+    </section> -->
     <!-- FAQ Section -->
     <section class="bg-[#2ca6b1] mt-16 py-12 px-6">
       <div class="max-w-5xl mx-auto text-white max-w-4xl">
